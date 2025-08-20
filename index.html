@@ -5,11 +5,12 @@
     <title>Quarterly Earnings</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Reveal.js -->
+    <!-- Reveal.js core CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <!-- Reveal.js theme -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <!-- Syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
   </head>
   <body>
     <div class="reveal">
@@ -18,7 +19,7 @@
         <!-- Title Slide -->
         <section>
           <h1>Quarterly Earnings</h1>
-          <p>24f2001915@ds.study.iitm.ac.in</p>
+          <p><strong>Email:</strong> 24f2001915@ds.study.iitm.ac.in</p>
         </section>
 
         <!-- Agenda -->
@@ -31,7 +32,7 @@
           </ul>
         </section>
 
-        <!-- Revenue Growth with fragment -->
+        <!-- Revenue Growth -->
         <section>
           <h2>Revenue Growth</h2>
           <p class="fragment">Q1 2025 revenue grew by 15% YoY</p>
@@ -53,7 +54,7 @@ def earnings_growth(revenue_last, revenue_now):
           <p>$$ \text{Net Income} = \text{Revenue} - \text{Expenses} $$</p>
         </section>
 
-        <!-- With Speaker Notes -->
+        <!-- Future Outlook with Notes -->
         <section>
           <h2>Future Outlook</h2>
           <p>Strong pipeline of new products and market expansion</p>
@@ -71,6 +72,16 @@ def earnings_growth(revenue_last, revenue_now):
       </div>
     </div>
 
+    <!-- Reveal.js Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <!-- Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <script>
       Reveal.initialize({
         hash: true,
@@ -78,10 +89,5 @@ def earnings_growth(revenue_last, revenue_now):
         plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
       });
     </script>
-
-    <!-- Plugins -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/markdown/markdown.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
   </body>
 </html>
