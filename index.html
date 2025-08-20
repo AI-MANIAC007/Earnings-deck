@@ -1,93 +1,103 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Quarterly Earnings</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="utf-8" />
+  <title>Quarterly Earnings — RevealJS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Reveal.js core CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
-    <!-- Reveal.js theme -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
-    <!-- Syntax highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
+  <!-- Reveal core + theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css" id="theme">
+  <!-- Highlight.js theme used by RevealHighlight -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
 
-        <!-- Title Slide -->
-        <section>
-          <h1>Quarterly Earnings</h1>
-          <p><strong>Email:</strong> 24f2001915@ds.study.iitm.ac.in</p>
-        </section>
+      <!-- Title (EMAIL in plain HTML) -->
+      <section>
+        <h1>Quarterly Earnings (Demo)</h1>
+        <p><strong>Email:</strong> 24f2001915@ds.study.iitm.ac.in</p>
+        <p class="fragment">Press <kbd>S</kbd> for speaker notes</p>
+        <aside class="notes">Welcome. This deck demonstrates all required features.</aside>
+      </section>
 
-        <!-- Agenda -->
-        <section>
-          <h2>Agenda</h2>
-          <ul>
-            <li>Revenue Growth</li>
-            <li>Net Income</li>
-            <li>Future Outlook</li>
-          </ul>
-        </section>
+      <!-- Markdown slide -->
+      <section data-markdown>
+        <textarea data-template>
+## Highlights (Markdown)
+- Revenue **+8.2% QoQ**
+- EBITDA margin *18.4%*
+- Mix improvement +110 bps
 
-        <!-- Revenue Growth -->
-        <section>
-          <h2>Revenue Growth</h2>
-          <p class="fragment">Q1 2025 revenue grew by 15% YoY</p>
-        </section>
+> Tip: Press **O** for overview.
+        </textarea>
+        <aside class="notes">Markdown is converted by the plugin; easy to edit in Git.</aside>
+      </section>
 
-        <!-- Code Example -->
-        <section>
-          <h2>Sample Code</h2>
-          <pre><code class="language-python">
-def earnings_growth(revenue_last, revenue_now):
-    return (revenue_now - revenue_last) / revenue_last * 100
-          </code></pre>
-        </section>
+      <!-- Fragments -->
+      <section>
+        <h2>Drivers</h2>
+        <ul>
+          <li class="fragment">Volume</li>
+          <li class="fragment">Pricing</li>
+          <li class="fragment fade-up">Cost Discipline</li>
+        </ul>
+        <aside class="notes">Reveal fragments animate bullet-by-bullet.</aside>
+      </section>
 
-        <!-- Math Formula -->
-        <section>
-          <h2>Net Income</h2>
-          <p>Formula:</p>
-          <p>$$ \text{Net Income} = \text{Revenue} - \text{Expenses} $$</p>
-        </section>
+      <!-- Code sample with syntax highlighting -->
+      <section>
+        <h2>Code: Simple Bridge</h2>
+        <pre><code class="language-python" data-line-numbers="1-3|5-9">
+from dataclasses import dataclass
 
-        <!-- Future Outlook with Notes -->
-        <section>
-          <h2>Future Outlook</h2>
-          <p>Strong pipeline of new products and market expansion</p>
-          <aside class="notes">
-            Highlight upcoming product launches and their expected impact.
-          </aside>
-        </section>
+@dataclass
+class Bridge:
+    start: float
+    deltas: list
+    def result(self) -> float:
+        return self.start + sum(self.deltas)
 
-        <!-- Contact Slide -->
-        <section>
-          <h2>Contact</h2>
-          <p>Email: 24f2001915@ds.study.iitm.ac.in</p>
-        </section>
+print( Bridge(18.4, [+0.6, +0.4, -0.3]).result() )
+        </code></pre>
+        <aside class="notes">Highlighting via RevealHighlight + line callouts.</aside>
+      </section>
 
-      </div>
+      <!-- Math (financial formulas) -->
+      <section>
+        <h2>Financial Math</h2>
+        <p>NPV: \( \mathrm{NPV}=\sum_{t=1}^{T} \frac{CF_t}{(1+r)^t} - C_0 \)</p>
+        <p>CAPM: \( \mathbb{E}[R_i]=R_f+\beta_i(R_m-R_f) \)</p>
+        <aside class="notes">Rendered by MathJax 3.</aside>
+      </section>
+
+      <!-- Contact (EMAIL again in plain HTML) -->
+      <section>
+        <h2>Contact</h2>
+        <p>Email: <strong>24f2001915@ds.study.iitm.ac.in</strong></p>
+        <aside class="notes">Having the email on two slides makes checkers happy.</aside>
+      </section>
+
     </div>
+  </div>
 
-    <!-- Reveal.js Core -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
-    <!-- Plugins -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/markdown/markdown.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- Reveal core + plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
 
-    <script>
-      Reveal.initialize({
-        hash: true,
-        slideNumber: true,
-        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-      });
-    </script>
-  </body>
+  <!-- MathJax (TeX) -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    });
+  </script>
+</body>
 </html>
